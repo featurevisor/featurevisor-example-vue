@@ -1,5 +1,10 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { useStatus, useFlag } from "@featurevisor/vue";
+
+import HelloWorld from "./components/HelloWorld.vue";
+import Usage from "./components/Usage.vue"
+
+const status = useStatus();
 </script>
 
 <template>
@@ -8,6 +13,15 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+
+      <div class="featurevisor-status">
+        <div v-if="status.isReady">
+          <Usage />
+        </div>
+        <div v-else>
+          Featurevisor SDK is loading...
+        </div>
+      </div>
     </div>
   </header>
 </template>
@@ -15,6 +29,11 @@ import HelloWorld from './components/HelloWorld.vue'
 <style scoped>
 header {
   line-height: 1.5;
+}
+
+.featurevisor-status {
+  margin-top: 20px;
+  text-align: center;
 }
 
 .logo {

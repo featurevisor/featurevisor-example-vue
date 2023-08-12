@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@featurevisor/sdk": "^0.44.0",
+    "@featurevisor/vue": "^0.44.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
