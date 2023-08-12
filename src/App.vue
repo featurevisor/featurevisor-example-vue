@@ -1,5 +1,5 @@
 <script setup>
-import { useStatus, useFlag } from "@featurevisor/vue";
+import { useStatus } from "@featurevisor/vue";
 
 import HelloWorld from "./components/HelloWorld.vue";
 import Usage from "./components/Usage.vue"
